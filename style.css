@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #E74C3C;
+    --accent-color: #3498DB;
+    --text-color: #ECF0F1;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(44, 62, 80, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    color: var(--secondary-color);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex: 1 1 150px;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+}
+
+.countdown-item span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#greetingMessage {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.decoration {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
+}
+
+#musicControl {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#musicControl:hover {
+    background-color: #C0392B;
+}
+
+.year {
+    font-size: 5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 2rem 0;
+}
+
+/* Media Query untuk ukuran layar mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .countdown {
+        flex-direction: column;
+    }
+
+    .countdown-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .year {
+        font-size: 4rem;
+    }
+
+    #musicControl {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .year {
+        font-size: 3rem;
+    }
+
+    #greetingMessage {
+        font-size: 1.2rem;
+    }
+}
